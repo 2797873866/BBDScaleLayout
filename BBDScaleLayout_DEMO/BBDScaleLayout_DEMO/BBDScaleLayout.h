@@ -7,4 +7,7 @@
 
 @interface BBDScaleLayout : UICollectionViewFlowLayout
 
+// 因为无法实现滚动到指定indexPath的功能，提供简便方法一个
++ (void)collectionView:(UICollectionView *)collectionView ScrollToItem:(NSInteger)item;
+
 @end

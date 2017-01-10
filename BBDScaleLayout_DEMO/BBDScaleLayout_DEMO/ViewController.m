@@ -55,18 +55,10 @@
     return cell;
 }
 
-// 因为自定义此流水布局中无法实现滚动到指定indexPath的功能，提供简便方法一个
-- (void)collectionViewScrollToItem:(NSInteger)item
-{
-    BBDScaleLayout *layout = (BBDScaleLayout *)self.collectionView.collectionViewLayout;
-    CGFloat offsetX = item * (layout.itemSize.width + MinimumLineSpacing);
-    [self.collectionView setContentOffset:CGPointMake(offsetX, 0) animated:YES];
-}
-
 // 测试使用
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self collectionViewScrollToItem:1];
+    [BBDScaleLayout collectionView:self.collectionView ScrollToItem:1];
 }
 
 @end
