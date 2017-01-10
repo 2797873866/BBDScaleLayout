@@ -5,7 +5,7 @@
 动画1MB左右，请耐心等待
 
 
-![image](https://github.com/BBD2008/BBDScaleCollectionLayout/raw/master/gif.gif)
+![image](https://github.com/BBD2008/BBDScaleLayout/raw/master/gif.gif)
 
 ## 使用方式
 1. 将DEMO中的BBDScaleLayout导入您的项目
