@@ -1,0 +1,2 @@
+# BBDScaleCollectionLayout
+将cell对齐屏幕中心，离中心越远的cell越小，比例可以自己控制
