@@ -17,5 +17,6 @@ ps. cell间距，cell缩小比例等参数可在.h头文件的宏定义中修改
 
 ##提示
 本布局无法使用scrollToItemAtIndexPath方法，DEMO中提供了替代方法：
-`- (void)collectionViewScrollToItem:(NSInteger)item`
+
+`+ (void)collectionView:(UICollectionView *)collectionView ScrollToItem:(NSInteger)item`
 
