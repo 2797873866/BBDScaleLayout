@@ -3,6 +3,8 @@
 
 ##动画演示
 动画1MB左右，请耐心等待
+
+
 ![image](https://github.com/BBD2008/BBDScaleCollectionLayout/raw/master/gif.gif)
 
 ## 使用方式
@@ -11,7 +13,7 @@
 3. 设置itemSize
 4. 将layout指定给collectionView的collectionViewLayout属性
 
-ps. 使用细节可参考DEMO
+ps. cell间距，cell缩小比例等参数可在.h头文件的宏定义中修改
 
 ##提示
 本布局无法使用scrollToItemAtIndexPath方法，DEMO中提供了替代方法：
