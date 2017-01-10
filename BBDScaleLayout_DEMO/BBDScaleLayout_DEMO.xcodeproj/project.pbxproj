@@ -13,7 +13,9 @@
 		2E2713741E24B5FE00391379 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2713721E24B5FE00391379 /* Main.storyboard */; };
 		2E2713761E24B5FE00391379 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E2713751E24B5FE00391379 /* Assets.xcassets */; };
 		2E2713791E24B5FE00391379 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E2713771E24B5FE00391379 /* LaunchScreen.storyboard */; };
-		2E2713831E24B63400391379 /* MDScaleFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2713821E24B63400391379 /* MDScaleFlowLayout.m */; };
+		2E2713831E24B63400391379 /* BBDScaleLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2713821E24B63400391379 /* BBDScaleLayout.m */; };
+		2E2713871E24BCD600391379 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2713851E24BCD600391379 /* CollectionViewCell.m */; };
+		2E2713881E24BCD600391379 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2713861E24BCD600391379 /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,11 @@
 		2E2713751E24B5FE00391379 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E2713781E24B5FE00391379 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E27137A1E24B5FE00391379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2E2713811E24B63400391379 /* MDScaleFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDScaleFlowLayout.h; sourceTree = "<group>"; };
-		2E2713821E24B63400391379 /* MDScaleFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDScaleFlowLayout.m; sourceTree = "<group>"; };
+		2E2713811E24B63400391379 /* BBDScaleLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDScaleLayout.h; sourceTree = "<group>"; };
+		2E2713821E24B63400391379 /* BBDScaleLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDScaleLayout.m; sourceTree = "<group>"; };
+		2E2713841E24BCD600391379 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		2E2713851E24BCD600391379 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		2E2713861E24BCD600391379 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,9 @@
 				2E27136D1E24B5FE00391379 /* AppDelegate.m */,
 				2E27136F1E24B5FE00391379 /* ViewController.h */,
 				2E2713701E24B5FE00391379 /* ViewController.m */,
+				2E2713841E24BCD600391379 /* CollectionViewCell.h */,
+				2E2713851E24BCD600391379 /* CollectionViewCell.m */,
+				2E2713861E24BCD600391379 /* CollectionViewCell.xib */,
 				2E2713721E24B5FE00391379 /* Main.storyboard */,
 				2E2713751E24B5FE00391379 /* Assets.xcassets */,
 				2E2713771E24B5FE00391379 /* LaunchScreen.storyboard */,
@@ -86,8 +94,8 @@
 		2E2713801E24B61D00391379 /* BBDScaleLayout */ = {
 			isa = PBXGroup;
 			children = (
-				2E2713811E24B63400391379 /* MDScaleFlowLayout.h */,
-				2E2713821E24B63400391379 /* MDScaleFlowLayout.m */,
+				2E2713811E24B63400391379 /* BBDScaleLayout.h */,
+				2E2713821E24B63400391379 /* BBDScaleLayout.m */,
 			);
 			name = BBDScaleLayout;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			files = (
 				2E2713791E24B5FE00391379 /* LaunchScreen.storyboard in Resources */,
 				2E2713761E24B5FE00391379 /* Assets.xcassets in Resources */,
+				2E2713881E24BCD600391379 /* CollectionViewCell.xib in Resources */,
 				2E2713741E24B5FE00391379 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,7 +174,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E2713711E24B5FE00391379 /* ViewController.m in Sources */,
-				2E2713831E24B63400391379 /* MDScaleFlowLayout.m in Sources */,
+				2E2713871E24BCD600391379 /* CollectionViewCell.m in Sources */,
+				2E2713831E24B63400391379 /* BBDScaleLayout.m in Sources */,
 				2E27136E1E24B5FE00391379 /* AppDelegate.m in Sources */,
 				2E27136B1E24B5FE00391379 /* main.m in Sources */,
 			);

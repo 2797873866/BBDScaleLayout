@@ -1,51 +1,52 @@
-//
-//  MDScaleFlowLayout.m
-//  maidian
-//
-//  Created by 李笑臣 on 2016/12/14.
-//  Copyright © 2016年 zhongkechuangxiang. All rights reserved.
-//
 
-#import "MDScaleFlowLayout.h"
+#import "BBDScaleLayout.h"
 
-@implementation MDScaleFlowLayout
+@implementation BBDScaleLayout
+
+- (instancetype)init
+{
+    if (self = [super init])
+    {
+        // 水平滚动
+        self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    }
+    return self;
+}
+
+- (void)prepareLayout
+{
+    [super prepareLayout];
+    
+    // 设置内边距，根据屏幕宽度和cell宽度计算section的左右边距
+    // 这些属性不能放在init中，放在其中无法生效
+    CGFloat sectionInsetLeftAndRight = (self.collectionView.frame.size.width - self.itemSize.width) * 0.5;
+    self.sectionInset = UIEdgeInsetsMake(0, sectionInsetLeftAndRight, 0, sectionInsetLeftAndRight);
+    self.minimumLineSpacing = MinimumLineSpacing;
+}
 
 /**
- 计算 targetContentOffset
+ 此方法用来控制collectionView的滚动，返回值为滚动的变化大小
  */
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity
 {
     // 获取当前layoutAttributes数组，获取每个cell的中心点坐标
     NSArray *layoutAttributesArray = [super layoutAttributesForElementsInRect:self.collectionView.bounds];
-    // 根据当前contentOffset，计算当前中心点的x值
+    // 根据当前contentOffset(proposedContentOffset)，计算当前中心点的x值
     CGFloat centerX = proposedContentOffset.x + self.collectionView.frame.size.width * 0.5;
-    // 求当前中心点与当前需要显示的cell中心点的差值，即为偏移量差值
+    // 求当前中心点与当前需要显示的cell中心点的差值
+    // 重点：我们并不知道哪个cell是当前屏幕中央的cell，通过遍历所有cell与中心点的差值，差值最小的一定是当前屏幕中央的cell。这个差值即为我们要求的偏移量。
     CGFloat minOffset = MAXFLOAT;
     for (UICollectionViewLayoutAttributes *attr in layoutAttributesArray)
     {
         if(ABS(minOffset) > ABS(attr.center.x - centerX))
         {
+            // 更新最小差值
             minOffset = attr.center.x - centerX;
         }
     }
-    // 修改偏移量即为targetContentOffset
+    // 偏移量与当前的proposedContentOffset相加————即为targetContentOffset
     proposedContentOffset.x += minOffset;
     return proposedContentOffset;
-}
-
-/**
- * 用来做布局的初始化操作（不建议在init方法中进行布局的初始化操作)
- */
-- (void)prepareLayout {
-    
-    [super prepareLayout];
-    
-    // 水平滚动
-    self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    // 设置内边距
-    CGFloat sectionInsetLeftAndRight = (self.collectionView.frame.size.width - self.itemSize.width) * 0.5;
-    self.sectionInset = UIEdgeInsetsMake(0, sectionInsetLeftAndRight, 0, sectionInsetLeftAndRight);
-    self.minimumLineSpacing = MinimumLineSpacing;
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="abp-ak-GEm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Xef-pn-bx4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,42 +9,68 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
-        <scene sceneID="L8v-Zk-Ftb">
+        <!--View Controller-->
+        <scene sceneID="DXS-It-pst">
             <objects>
-                <collectionViewController id="abp-ak-GEm" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GMq-Z9-3SS">
+                <viewController id="Xef-pn-bx4" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ow7-kw-MfG"/>
+                        <viewControllerLayoutGuide type="bottom" id="dfi-VS-YFN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eBF-P6-SVF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1aK-lJ-y9H">
-                            <size key="itemSize" width="240" height="417"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RWM-DT-h8d">
-                                <rect key="frame" x="35" y="0.0" width="250" height="400"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="400"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </view>
-                                <size key="customSize" width="250" height="400"/>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="abp-ak-GEm" id="4P6-ch-jZs"/>
-                            <outlet property="delegate" destination="abp-ak-GEm" id="b7I-hY-naE"/>
-                        </connections>
-                    </collectionView>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gmo-Pa-qgc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="450"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VsU-g3-6B9">
+                                    <size key="itemSize" width="262" height="424"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LQe-8P-iBm">
+                                        <rect key="frame" x="29" y="0.0" width="262" height="424"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="262" height="424"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xef-pn-bx4" id="dcR-h4-aCx"/>
+                                    <outlet property="delegate" destination="Xef-pn-bx4" id="sdd-Ny-qTR"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击灰色区域，跳转" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-cA-kPd">
+                                <rect key="frame" x="96" y="458" width="129" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Oh-cA-kPd" firstAttribute="centerX" secondItem="eBF-P6-SVF" secondAttribute="centerX" id="1aO-ja-uNe"/>
+                            <constraint firstAttribute="trailing" secondItem="Gmo-Pa-qgc" secondAttribute="trailing" id="KPl-CT-MMM"/>
+                            <constraint firstItem="Gmo-Pa-qgc" firstAttribute="top" secondItem="eBF-P6-SVF" secondAttribute="top" id="XnF-Oe-tId"/>
+                            <constraint firstItem="5Oh-cA-kPd" firstAttribute="top" secondItem="Gmo-Pa-qgc" secondAttribute="bottom" constant="8" id="Za9-Hq-crW"/>
+                            <constraint firstItem="dfi-VS-YFN" firstAttribute="top" secondItem="Gmo-Pa-qgc" secondAttribute="bottom" constant="30" id="anF-Qy-gFs"/>
+                            <constraint firstItem="Gmo-Pa-qgc" firstAttribute="leading" secondItem="eBF-P6-SVF" secondAttribute="leading" id="csd-yc-92W"/>
+                        </constraints>
+                    </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="480"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ABk-eQ-Eg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Gmo-Pa-qgc" id="Tpl-PM-hfk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nQf-cI-c0H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123" y="92"/>
+            <point key="canvasLocation" x="-43.200000000000003" y="36.881559220389811"/>
         </scene>
     </scenes>
 </document>
